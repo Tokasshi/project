@@ -20,9 +20,9 @@ class IndexController extends Controller
         }]) ->limit(4)->latest()->get();
         $topics= Topic::where('published', 1)->limit(2)->latest()->get();
         $testimonials = Testimonial::where('published', 1)->limit(3)->latest()->get();
-        $topic1 = Topic::where('published', 1)->where('trending', 1)->inRandomOrder()->first(); // Get one random topic
-        $topic2 = Topic::where('published', 1)->where('trending', 1)->inRandomOrder()->first(); // Get another random topic
-        return view('index', compact('categories','testimonials', 'topics', 'topic1', 'topic2'));
+        $latestTopics = Topic::where('published', 1)->where('trending', 1)->latest()->take(2)->get();
+    
+        return view('index', compact('categories','testimonials', 'topics', 'latestTopics'));
     }
     
 

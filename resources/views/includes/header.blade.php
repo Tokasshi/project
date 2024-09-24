@@ -5,13 +5,13 @@
                         <div class="col-lg-5 col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Homepage</a></li>
 
-                                    <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ $pageTitle }}</li>
                                 </ol>
                             </nav>
 
-                            <h2 class="text-white">Testimonials</h2>
+                            <h2 class="text-white">{{ $pageTitle }}</h2>
                         </div>
 
                     </div>

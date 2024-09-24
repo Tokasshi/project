@@ -37,19 +37,21 @@
                 <div class="tab-content" id="myTabContent">
                     @foreach ($categories as $category)
                     <div class="tab-pane fade show {{$loop->first? 'active':''}}" id="tab-{{$category->id}}" role="tabpanel"
-                         aria-labelledby="design-tab" tabindex="0">
+                        aria-labelledby="design-tab" tabindex="0">
                         
 
                         <div class="row">
                             @foreach ($category->topics as $topic)
                             <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                                 <div class="custom-block bg-white shadow-lg">
-                                    <a href="{{route ('topic.detail', $topic['id'])}}">
+                                @if($topic->id)
+                                <a href="{{ route('topic.detail', $topic->id) }}">
+                                @endif
                                         <div class="d-flex">
                                             <div>
                                                 <h5 class="mb-2">{{$topic->topicTitle}}</h5>
 
-                                                <p class="mb-0">{{ Str::limit($topic->content, 100) }}...</p>
+                                                <p class="mb-0">{{ Str::limit($topic->content, 20) }}...</p>
                                             </div>
 
                                             <span class="badge bg-design rounded-pill ms-auto">17</span>

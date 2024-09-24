@@ -24,7 +24,7 @@ class TestimonialController extends Controller
     public function home()
     {
         $testims = Testimonial::where('published', 1)->get();
-        return view('testimonials', compact('testims'));
+        return view('testimonials', compact('testims'),['pageTitle' => ' Testimonials']);
     }
 
     /**

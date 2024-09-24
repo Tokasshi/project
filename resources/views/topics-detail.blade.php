@@ -1,12 +1,46 @@
 
-@extends('layouts.mainone')
+<!doctype html>
+<html lang="en">
+@include ('includes.head')
+    
+    <body id="top">
 
-@section('index')
+        <main>
 
-
+        @include ('includes.navbar')
             
 
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
 
+                        <div class="col-lg-5 col-12 mb-5">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ route('index') }}">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">{{$topic->category->catName}}</li>
+                                </ol>
+                            </nav>
+
+                            <h2 class="text-white">{{ $topic['topicTitle'] }}</h2>
+
+                            <div class="d-flex align-items-center mt-5">
+                                <a href="#topics-detail" class="btn custom-btn custom-border-btn smoothscroll me-4">Read More</a>
+
+                                <a href="#top" class="custom-icon bi-bookmark smoothscroll"></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <div class="topics-detail-block bg-white shadow-lg">
+                                <img src="{{ asset('assets/images/topics/' . $topic->image) }}" class="topics-detail-block-image img-fluid">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
 
 
             <section class="topics-detail-section section-padding" id="topics-detail">
@@ -31,7 +65,7 @@
                     <div class="row justify-content-center">
 
                         <div class="col-lg-5 col-12">
-                            <img src="{{asset('assets/images/rear-view-young-college-student.jpg')}}" class="newsletter-image img-fluid" alt="">
+                            <img src="images/rear-view-young-college-student.jpg" class="newsletter-image img-fluid" alt="">
                         </div>
 
                         <div class="col-lg-5 col-12 subscribe-form-wrap d-flex justify-content-center align-items-center">
@@ -49,5 +83,15 @@
                     </div>
                 </div>
             </section>
+        </main>
+		
+        @include ('includes.footer')
 
-            @endsection
+        <!-- JAVASCRIPT FILES -->
+        @include ('includes.footerjs')
+
+    </body>
+</html>
+
+
+

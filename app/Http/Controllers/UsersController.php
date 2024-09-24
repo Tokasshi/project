@@ -18,6 +18,12 @@ class UsersController extends Controller
     }
     
 
+    public function showHeader()
+{
+    $user = auth()->user(); // Get the currently logged-in user
+    return view('admin.includes.header', compact('user')); // Pass the user to the view
+}
+
     /**
      * Show the form for creating a new resource.
      */

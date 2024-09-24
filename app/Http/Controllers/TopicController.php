@@ -116,7 +116,7 @@ class TopicController extends Controller
         $popularTopics = Topic::where('published', 1)->limit(3)->latest()->get();
         $trendingTopics = Topic::where('published', 1)->where('trending', 1)->latest()->take(2)->get();
     
-        return view('topics-listing', compact('popularTopics', 'trendingTopics'));
+        return view('topics-listing', compact('popularTopics', 'trendingTopics'), ['pageTitle' => 'Topics Listing']);
     }
     
     /**

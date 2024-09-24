@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function contactForm()
     {
-        return view('contact');
+        return view('contact' ,['pageTitle' => 'Contact Us']);
     }
 
     
@@ -35,7 +35,7 @@ class ContactController extends Controller
         // Send the email
         Mail::to('hello@example.com')->send(new ContactMail($data));
 
-        return "Message sent successfully";
+        return redirect()->route('contactForm');
     }
     
 }

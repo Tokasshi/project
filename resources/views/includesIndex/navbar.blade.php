@@ -48,9 +48,7 @@
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{{ route('contactForm') }}">Contact Us</a></li>
                                 <li><a class="dropdown-item" href="{{ route('testimonials.index') }}">Our Client Says</a></li>
-                                <li><a class="dropdown-item" href="{{ route('topics.popular') }}">Topics Listing</a></li>
-                                <li><a class="dropdown-item" href="{{ route('topic.detail') }}">Topics details</a></li>
-                            </ul>
+                                <li><a class="dropdown-item" href="{{ route('topics.popular') }}">Topics Listing</a></li>                            </ul>
                         </li>
                     </ul>
 
